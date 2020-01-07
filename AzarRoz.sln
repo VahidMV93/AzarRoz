@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarRoz", "AzarRoz\AzarRoz.csproj", "{5FA9B88C-668B-4E78-B70F-BE37C2FFFB96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzarRoz.Data", "AzarRoz.Data\AzarRoz.Data.csproj", "{1AEB71D6-EF22-4397-B4A0-9D0548224E02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FA9B88C-668B-4E78-B70F-BE37C2FFFB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA9B88C-668B-4E78-B70F-BE37C2FFFB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA9B88C-668B-4E78-B70F-BE37C2FFFB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA9B88C-668B-4E78-B70F-BE37C2FFFB96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AEB71D6-EF22-4397-B4A0-9D0548224E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEB71D6-EF22-4397-B4A0-9D0548224E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEB71D6-EF22-4397-B4A0-9D0548224E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEB71D6-EF22-4397-B4A0-9D0548224E02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62A28AD6-1344-46F4-9FC4-DF99AD29DD92}
+	EndGlobalSection
+EndGlobal

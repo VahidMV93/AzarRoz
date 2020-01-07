@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AzarRoz.Models;
+using AzarRoz.Data.Models;
 
 namespace AzarRoz.Controllers
 {

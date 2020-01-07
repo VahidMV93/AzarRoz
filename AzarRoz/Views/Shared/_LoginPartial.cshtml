@@ -1,22 +1,38 @@
 ﻿@using Microsoft.AspNet.Identity
+@using AzarRoz.Data;
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            @{
+                var context = new ApplicationDbContext();
+                var userId = User.Identity.GetUserId();
+                var currentUser = context.Users.Where(u => u.Id == userId).FirstOrDefault();
+            }
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i>&nbsp;سلام @(currentUser.FullName)!&nbsp;<i class="fas fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="text-right"><a href="~/GroupProducts/Index"><i class="fas fa-tag"></i>&nbsp;گروه بندی محصولات</a></li>
+                    <li class="text-right"><a href="~/GroupColors/Index"><i class="fas fa-palette"></i>&nbsp;گروه بندی رنگ ها</a></li>
+                    <li class="text-right"><a href="~/Products/Index"><i class="fab fa-product-hunt"></i>&nbsp;مدیریت محصولات</a></li>
+                    <li class="text-right"><a href="~/Manage/Index"><i class="fas fa-user-cog"></i>&nbsp;مدیریت حساب کاربری</a></li>
+                </ul>
+            </li>
+
+            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i>&nbsp;خروج</a></li>
+        </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li><a href="~/Account/Register" id="registerLink"><i class="fas fa-user-plus"></i>&nbsp;ثبت نام</a></li>
+        <li><a href="~/Account/Login" id="loginLink"><i class="fas fa-sign-in-alt"></i>&nbsp;ورود</a></li>
     </ul>
 }

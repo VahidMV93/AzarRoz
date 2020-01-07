@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using AzarRoz.Models;
+using AzarRoz.Data.Models;
+using AzarRoz.Data;
 
 namespace AzarRoz
 {

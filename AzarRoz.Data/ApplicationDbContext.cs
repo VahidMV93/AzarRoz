@@ -23,7 +23,9 @@ namespace AzarRoz.Data
 
         static ApplicationDbContext()
         {
-            System.Data.Entity.Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>());
         }
+
+        public DbSet<GroupProduct> GroupProducts { get; set; }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model AzarRoz.Data.Models.GroupProduct
+
+@{
+    ViewBag.Title = "حذف گروه";
+}
+
+<h4 class="text-center well"><i class="fas fa-trash"></i>&nbsp;حذف گروه</h4>
+
+<h4>آیا مایل به حذف گروه مورد نظر هستید ؟</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button class="btn btn-danger"><i class="fas fa-trash"></i>&nbsp;حذف گروه</button> |
+            @Html.ActionLink("لیست گروه ها", "Index")
+        </div>
+    }
+</div>
